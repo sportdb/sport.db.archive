@@ -6,18 +6,18 @@ The sportdb web service starter sample let's build your own HTTP JSON API using 
 
 ## Getting Started
 
-Step 1: Install all libraries (Ruby gems) using bundler. Issue
+Step 1: Install all libraries (Ruby gems) using bundler. Issue:
 
     $ bundle install
 
-Step 2: Copy a `football.db` into your app folder
+Step 2: Copy a `football.db` into your app folder.
 
-Step 3: Startup the web service (HTTP JSON API) using rack. Issue
+Step 3: Startup the web service (HTTP JSON API) using rack. Issue:
 
     $ rackup
 
 That's it. Open your browser and try some services
-running on localhost on port 9292:
+running on localhost on port 9292. Example:
 
 List all World Cup 2014 teams:
 
@@ -31,7 +31,7 @@ List World Cup 2014 round 1:
 
 - `http://localhost:9292/event/world.2014/round/1`
 
-and so on. Now change the `server.rb` script to fit your needs. Be bold. Enjoy.
+And so on. Now change the `server.rb` script to fit your needs. Be bold. Enjoy.
 
 
 ## License
