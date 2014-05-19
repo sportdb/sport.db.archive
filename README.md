@@ -1,8 +1,8 @@
-# sport.db.api.starter - sportdb web service starter sample
+# sport.db.api.starter
 
-Let's build your own HTTP JSON API using the
+The sportdb web service starter sample let's build your own HTTP JSON API using the
 `football.db`, `worldcup.db`, `ski.db`, `formulal1.db`, etc.
-
+ 
 
 ## Getting Started
 
