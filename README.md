@@ -1,4 +1,4 @@
-# sport.db.api.starter
+# sport.db.service.starter
 
 The sportdb web service starter sample let's build your own HTTP JSON API using the
 `football.db`, `worldcup.db`, `ski.db`, `formulal1.db`, etc.
@@ -36,7 +36,7 @@ And so on. Now change the `server.rb` script to fit your needs. Be bold. Enjoy.
 
 ## License
 
-The `sportdb.db.api.starter` scripts are dedicated to the public domain.
+The `sportdb.db.service.starter` scripts are dedicated to the public domain.
 Use it as you please with no restrictions whatsoever.
 
 
