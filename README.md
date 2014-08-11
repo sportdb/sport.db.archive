@@ -1,4 +1,4 @@
-# sport.db.service.starter
+# sport.db.starter (Ruby Edition)
 
 The sportdb web service starter sample let's build your own HTTP JSON API using the
 `football.db`, `worldcup.db`, `ski.db`, `formulal1.db`, etc.
