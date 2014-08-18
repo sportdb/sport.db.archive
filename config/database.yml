@@ -1,0 +1,5 @@
+
+development:
+  adapter:  sqlite3
+  database: football.db      # NOTE: change to use your db of choice (e.g. worldcup.db, bundesliga.db, ski.db etc.)
+
