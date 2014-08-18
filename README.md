@@ -1,8 +1,12 @@
-# sport.db.starter (Ruby Edition)
+# sport.db.starter (Ruby Edition) - Build Your Own HTTP JSON API
 
-The sportdb web service starter sample let's build your own HTTP JSON API using the
-`football.db`, `worldcup.db`, `ski.db`, `formulal1.db`, etc.
- 
+The sportdb web service starter sample lets you build your own HTTP JSON API
+using the
+[`football.db`](https://github.com/openfootball),
+[`worldcup.db`](https://github.com/openfootball/world-cup),
+[`ski.db`](https://github.com/opensport/ski.db),
+[`formulal1.db`](https://github.com/opensport/formula1.db), etc.
+
 
 ## Getting Started
 
@@ -10,35 +14,59 @@ Step 1: Install all libraries (Ruby gems) using bundler. Type:
 
     $ bundle install
 
-Step 2: Copy a `football.db` into your app folder.
+Step 2: Copy an SQLite database e.g. `football.db` into your folder.
 
 Step 3: Startup the web service (HTTP JSON API). Type:
 
     $ ruby server.rb
 
-That's it. Open your browser and try some services
-running on localhost on port 9292. Example:
+That's it. Open your web browser and try some services
+running on your machine, that is, localhost on port 9292. Example:
 
 
 List all services (endpoints):
 
 - `http://localhost:9292`
 
+```json
+{
+  "endpoints": {
+    "list_events": {
+      "doc": "list all events",
+      "url": "/events"
+    },
+    "list_event_teams": {
+      "doc": "list teams for an event",
+      "url": "/event/:key/teams"
+    },
+    "list_event_rounds": {
+      "doc": "list rounds for an event",
+      "url": "/event/:key/rounds"
+    },
+    "list_event_games_for_round": {
+      "doc": "list games for an event round",
+      "url": "/event/:key/round/:pos"
+    }
+  }
+}
+```
+
 List all events:
 
 - `http://localhost:9292/events`
 
-List all World Cup 2014 teams:
+List all World Cup Brazil 2014 teams:
 
 - `http://localhost:9292/event/world.2014/teams`
 
-List all World Cup 2014 rounds:
+List all World Cup Brazil 2014 rounds:
 
 - `http://localhost:9292/event/world.2014/rounds`
 
-List World Cup 2014 round 1:
+List World Cup 2014 Brazil round 1:
 
 - `http://localhost:9292/event/world.2014/round/1`
+
 
 And so on. Now change the `app.rb` script to fit your needs. Be bold. Enjoy.
 

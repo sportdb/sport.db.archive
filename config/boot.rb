@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 ############################################
 # 3rd party gems via bundler (see Gemfile)
 

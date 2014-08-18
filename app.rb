@@ -1,7 +1,9 @@
+# encoding: utf-8
+
 ######
 # note: to run use
 #
-#  e.g. ruby ./server.rb
+#    $ ruby ./server.rb
 
 
 class StarterApp < Sinatra::Base
@@ -61,7 +63,7 @@ get '/event/:key/teams' do |key|
     teams << { key: t.key, title: t.title, code: t.code }
   end
 
-  data = { event: { key: event.key, title: event.full_title }, teams: teams }
+  data = { event: { key: event.key, title: event.title }, teams: teams }
 
   json_or_jsonp( data )
 end
@@ -78,7 +80,7 @@ get '/event/:key/rounds' do |key|
                 end_at:   r.end_at.strftime('%Y/%m/%d') }
   end
 
-  data = { event: { key: event.key, title: event.full_title }, rounds: rounds }
+  data = { event: { key: event.key, title: event.title }, rounds: rounds }
 
   json_or_jsonp( data )
 end
@@ -104,12 +106,12 @@ get '/event/:key/round/:pos' do |key,pos|
                team2_key: g.team2.key, team2_title: g.team2.title, team2_code: g.team2.code,
                play_at: g.play_at.strftime('%Y/%m/%d'),
                score1:   g.score1,   score2:   g.score2,
-               score1ot: g.score1ot, score2ot: g.score2ot,
+               score1et: g.score1et, score2et: g.score2et,
                score1p:  g.score1p,  score2p:  g.score2p
              }
   end
 
-  data = { event: { key: event.key, title: event.full_title },
+  data = { event: { key: event.key, title: event.title },
            round: { pos: round.pos, title: round.title,
                     start_at: round.start_at.strftime('%Y/%m/%d'),
                     end_at:   round.end_at.strftime('%Y/%m/%d')
@@ -131,17 +133,20 @@ def json_or_jsonp( data )
   # note: pretty print json
   json_str = JSON.pretty_generate( data )
   
+  ## puts "json_str.encoding (before): #{json_str.encoding}"
   ## hack: for windows force utf-8   -- check if needed/works ???
-  ##json_str = json_str.force_encoding( 'utf-8' )
+  ##json_str = json_str.force_encoding( Encoding::UTF_8 )
+  ## puts "json_str.encoding (after): #{json_str.encoding}"
 
   if callback
     content_type :js
     response = "#{callback}(#{json_str})"
   else
-    content_type :json
+    # note:  content_type :json will "just" use application/json  w/o charset
+    content_type 'application/json;charset=utf-8'
     response = json_str
   end
-  
+
   response
 end
 
