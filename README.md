@@ -1,4 +1,4 @@
-# sport.db.starter (Ruby Edition) - Build Your Own HTTP JSON API
+# sport.db.starter - Build Your Own HTTP JSON API (Ruby Edition)
 
 The sportdb web service starter sample lets you build your own HTTP JSON API
 using the
@@ -21,12 +21,14 @@ Step 3: Startup the web service (HTTP JSON API). Type:
     $ ruby server.rb
 
 That's it. Open your web browser and try some services
-running on your machine, that is, localhost on port 9292. Example:
+running on your machine on port 9292 (e.g. `localhost:9292`). Example:
 
 
 List all services (endpoints):
 
 - `http://localhost:9292`
+
+Results in:
 
 ```json
 {
