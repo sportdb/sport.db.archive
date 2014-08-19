@@ -10,12 +10,12 @@ using the
 ```ruby
 class StarterApp < Sinatra::Base
 
-  #####################
+  ##########
   # Models
 
   include SportDb::Models    # e.g. Event, Team, Round, League, Season, etc.
 
-  ##############################################
+  ############################################
   # Controllers / Routing / Request Handlers
 
   get '/events' do
