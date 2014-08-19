@@ -7,6 +7,46 @@ using the
 [`ski.db`](https://github.com/opensport/ski.db),
 [`formulal1.db`](https://github.com/opensport/formula1.db), etc.
 
+```ruby
+class StarterApp < Sinatra::Base
+
+  #####################
+  # Models
+  include SportDb::Models
+
+  ##############################################
+  # Controllers / Routing / Request Handlers
+
+  get '/events' do
+    events = []
+    Event.order(:id).each do |ev|
+      events << { key: ev.key, title: ev.title }
+    end
+
+    json_or_jsonp( events )
+  end
+
+  get '/event/:key/teams' do |key|
+    # note: change en.2012_13 or en.2012-13 to en.2012/13
+    event = Event.find_by_key!( key.tr('_', '/').tr('-', '/') )
+
+    teams = []
+    event.teams.each do |t|
+      teams << { key: t.key, title: t.title, code: t.code }
+    end
+
+    data = { event: { key: event.key, title: event.title }, teams: teams }
+
+    json_or_jsonp( data )
+  end
+  
+  ...
+end # class StarterApp
+```
+
+(Source: [`app.rb`](app.rb))
+
+
 
 ## Getting Started
 
