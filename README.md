@@ -97,17 +97,18 @@ List all events:
 
 - `http://localhost:9292/events`
 
-List all World Cup Brazil 2014 teams:
+List all English Premier League 2014/15 teams:
 
-- `http://localhost:9292/event/world.2014/teams`
+- `http://localhost:9292/event/en.2014_15/teams`
 
-List all World Cup Brazil 2014 rounds:
+List all English Premier League 2014/15 rounds:
 
-- `http://localhost:9292/event/world.2014/rounds`
+- `http://localhost:9292/event/en.2014_15/rounds`
 
-List World Cup 2014 Brazil round 1:
+List English Premier League 2014/15 round 1:
 
-- `http://localhost:9292/event/world.2014/round/1`
+- `http://localhost:9292/event/en.2014_15/round/1`
+
 
 
 And so on. Now change the `app.rb` script to fit your needs. Be bold. Enjoy.
