@@ -111,7 +111,7 @@ List English Premier League 2014/15 round 1:
 
 
 
-And so on. Now change the `app.rb` script to fit your needs. Be bold. Enjoy.
+And so on. Now change the [`app.rb`](app.rb) script to fit your needs. Be bold. Enjoy.
 
 
 ## License
