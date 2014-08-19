@@ -27,7 +27,7 @@ class StarterApp < Sinatra::Base
   end
 
   get '/event/:key/teams' do |key|
-    # note: change en.2012_13 or en.2012-13 to en.2012/13
+    # note: change en.2014_15 or en.2014-15 to en.2014/15
     event = Event.find_by_key!( key.tr('_', '/').tr('-', '/') )
 
     teams = []
