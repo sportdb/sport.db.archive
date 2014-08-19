@@ -5,7 +5,7 @@ using the
 [`football.db`](https://github.com/openfootball),
 [`worldcup.db`](https://github.com/openfootball/world-cup),
 [`ski.db`](https://github.com/opensport/ski.db),
-[`formulal1.db`](https://github.com/opensport/formula1.db), etc.
+[`formulal1.db`](https://github.com/opensport/formula1.db), etc.  Example:
 
 ```ruby
 class StarterApp < Sinatra::Base
